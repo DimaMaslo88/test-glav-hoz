@@ -1,0 +1,21 @@
+.tableContainer{
+display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tableRowActive{
+    background-color: yellow ;
+    cursor: pointer;
+}
+.tableRow{
+    cursor: pointer;
+}
+.filterIcon{
+  margin-left: 10px;
+    cursor: pointer;
+}
+.tableHeader{
+display: flex;
+    background-color: lightskyblue;
+
+}

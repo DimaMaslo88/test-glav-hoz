@@ -1,0 +1,18 @@
+.icon{
+    cursor: pointer;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-around;
+    margin: 35px;
+    width: 1442px;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.title {
+    font-size: 66px;
+    font-weight: 400;
+    color: #F0F0F0;
+}
