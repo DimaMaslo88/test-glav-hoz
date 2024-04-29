@@ -7,7 +7,7 @@ export const Pages = () => {
   return (
     <div>
       <Routes>
-<Route path='/' element={<Navigate to='table'/>}/>
+<Route path='/' element={<Navigate to='/table'/>}/>
 <Route path='/table' element={<TableComponent/>}/>
 <Route path='/form' element={<FormComponent/>}/>
       </Routes>
