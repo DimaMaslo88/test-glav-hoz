@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/test-glav-hoz/static/css/main.b816d77c.css",
+    "main.js": "/test-glav-hoz/static/js/main.82eff6fc.js",
+    "static/js/453.70820700.chunk.js": "/test-glav-hoz/static/js/453.70820700.chunk.js",
+    "index.html": "/test-glav-hoz/index.html",
+    "main.b816d77c.css.map": "/test-glav-hoz/static/css/main.b816d77c.css.map",
+    "main.82eff6fc.js.map": "/test-glav-hoz/static/js/main.82eff6fc.js.map",
+    "453.70820700.chunk.js.map": "/test-glav-hoz/static/js/453.70820700.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b816d77c.css",
+    "static/js/main.82eff6fc.js"
+  ]
+}
