@@ -6,10 +6,13 @@ import AutorenewIcon from '@mui/icons-material/Autorenew';
 import FilterListOffOutlinedIcon from '@mui/icons-material/FilterListOffOutlined';
 import DehazeOutlinedIcon from '@mui/icons-material/DehazeOutlined';
 import { useNavigate } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { selectTableId } from 'bll/selectors/Selectors';
 
 export const Header = () => {
   const dispatch = useAppDispatch();
   const navigator = useNavigate()
+  const formId = useSelector(selectTableId)
   const navigateToForm = ()=>{
     navigator('form')
   }
@@ -23,7 +26,7 @@ const reloadPageHandler = ()=>{
       <FilterListOffOutlinedIcon className={style.icon}/>
       <ButtonHeader title="Добавить" />
       <ButtonHeader title="Просмотреть" />
-      <ButtonHeader title="Редактировать" />
+      <ButtonHeader title="Редактировать"  onClick={navigateToForm} disabled={!formId} />
       <DehazeOutlinedIcon className={style.icon} />
     </div>
   );

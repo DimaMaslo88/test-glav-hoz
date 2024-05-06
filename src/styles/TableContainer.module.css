@@ -9,6 +9,7 @@ display: flex;
 }
 .tableRow{
     cursor: pointer;
+
 }
 .filterIcon{
   margin-left: 10px;

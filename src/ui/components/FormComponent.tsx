@@ -2,10 +2,13 @@ import React, { useEffect } from "react";
 import { useAppDispatch } from "bll/store";
 import { SetFormForYoungSpec, SetFormLineForYoungSpec } from "dal/thunk/ContentThunk";
 import { useSelector } from "react-redux";
-import { selectFormParams, selectIsLoading, selectLineParams } from "bll/selectors/Selectors";
+import { selectFormParams, selectIsLoading, selectLineParams, selectTableId } from 'bll/selectors/Selectors';
 import { Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import style from "styles/TableContainer.module.css";
-import LinearIndeterminateProgress from "ui/utils/progress/Progress";
+import ButtonHeader from 'ui/utils/button/Button';
+import { useNavigate } from 'react-router-dom';
+import { setId } from 'bll/actions/appReducer-actions';
+
 
 
 export const FormComponent = () => {
@@ -13,16 +16,25 @@ export const FormComponent = () => {
   const formLineData = useSelector(selectLineParams);
   const formData = useSelector(selectFormParams)
   const isLoading = useSelector(selectIsLoading);
+  const tableId = useSelector(selectTableId)
+  const navigate = useNavigate()
+  const navigateToTable = ()=>{
+    navigate('/table')
+    dispatch(setId(null))
+  }
+
   useEffect(()=>{
     dispatch(SetFormLineForYoungSpec())
   },[])
-  useEffect(() => {
-    dispatch(SetFormForYoungSpec());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(SetFormForYoungSpec());
+  // }, []);
   // if (isLoading) {
   //   return <LinearIndeterminateProgress />;
   // }
   return (
+    <div>
+
     <TableContainer component={Paper} className={style.tableContainer}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
@@ -71,6 +83,9 @@ export const FormComponent = () => {
         </TableBody>
       </Table>
     </TableContainer>
+      <ButtonHeader title="Вернуться назад"  onClick={navigateToTable}/>
+    </div>
   );
+
 };
 

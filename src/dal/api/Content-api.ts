@@ -5,10 +5,16 @@ export const ContentApi ={
   getHeaderData(){
     return instance.get<TableReducerType[]>('/f_pers_young_spec/')
   },
-  getFormLineData(){
-    return instance.get('/f_pers_young_spec_line/')
+  // getHeaderDataId(id:number){
+  //   return instance.get<TableReducerType[]>(`/f_pers_young_spec/${id}`)
+  // },
+  getFormLineDataId(id:number){
+    return instance.get(`/f_pers_young_spec/${id}`)
   },
+  // getFormLineId(id:number|null){
+  //   return instance.get(`/nsi_pers_young_spec/${id}`)
+  // },
   getFormLine(){
-    return instance.get('/nsi_pers_young_spec/')
+    return instance.get(`/nsi_pers_young_spec/`)
   }
 }

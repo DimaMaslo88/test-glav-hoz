@@ -21,10 +21,11 @@ export const SetTableDataThunk = (): AppThunkType => async (dispatch) => {
 };
 
 
-export const SetFormForYoungSpec = (): AppThunkType => async (dispatch) => {
+export const SetFormForYoungSpec = (id:number): AppThunkType => async (dispatch) => {
   dispatch(setIsLoading(true));
   try {
-    const res = await ContentApi.getFormLineData();
+
+    const res = await ContentApi.getFormLineDataId(id);
     dispatch(setFormData(res.data));
     console.log(res.data);
   } catch (err) {
@@ -38,6 +39,7 @@ export const SetFormLineForYoungSpec = (): AppThunkType => async (dispatch) => {
   try {
     const res = await ContentApi.getFormLine();
     dispatch(setFormLineData(res.data))
+    dispatch(SetFormForYoungSpec(res.data.id)) // дать инфу для линий пока не работает
     console.log(res.data);
   } catch (err) {
     console.log(err);

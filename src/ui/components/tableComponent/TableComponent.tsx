@@ -14,8 +14,7 @@ export const TableComponent = () => {
   const dispatch = useAppDispatch()
   const isLoading = useSelector(selectIsLoading);
   const tableData = useSelector(selectTableParams);
-  const tableId = useSelector(selectTableId)
-  const [ascendingYear, setAscendingYear] = useState<boolean>(false);
+   const [ascendingYear, setAscendingYear] = useState<boolean>(false);
   const [ascendingPeriod, setAscendingPeriod] = useState<boolean>(false);
   const [sort, setSort] = useState<SortValueType>();
   const [selected, setSelected] = useState<number|null>(null);
@@ -88,6 +87,7 @@ export const TableComponent = () => {
           {newTableData.map((data) => (
             <TableRow
               onClick={()=>onClickHandler(data.f_pers_young_spec_id)}
+
               key={data.f_pers_young_spec_id}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               className={selected === data.f_pers_young_spec_id ? style.tableRowActive :style.tableRow}
