@@ -8,6 +8,7 @@ import style from "styles/TableContainer.module.css";
 import ButtonHeader from 'ui/utils/button/Button';
 import { useNavigate } from 'react-router-dom';
 import { setId } from 'bll/actions/appReducer-actions';
+import { setIsOpenModal } from 'bll/actions/modal-actions';
 
 
 
@@ -19,7 +20,7 @@ export const FormComponent = () => {
   const tableId = useSelector(selectTableId)
   const navigate = useNavigate()
   const navigateToTable = ()=>{
-    navigate('/table')
+   dispatch(setIsOpenModal(false))
     dispatch(setId(null))
   }
 

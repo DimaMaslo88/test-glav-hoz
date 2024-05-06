@@ -33,6 +33,9 @@ export type appReducerType = {
   currentPage:number
   id:number|null
 }
-
+// modalReducer type
+export type ModalReducerType={
+  isOpenModal:boolean
+}
 // sortTable type
 export type SortValueType = "period" | "year" | "org"
