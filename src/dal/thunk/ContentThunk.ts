@@ -34,11 +34,15 @@ export const SetFormForYoungSpec = (id:number): AppThunkType => async (dispatch)
     dispatch(setIsLoading(false));
   }
 };
-export const SetFormLineForYoungSpec = (): AppThunkType => async (dispatch) => {
+export const SetFormLineForYoungSpec = (): AppThunkType => async (dispatch,getState) => {
   dispatch(setIsLoading(true));
+  const formData = getState().formLine
   try {
-    const res = await ContentApi.getFormLine();
-    dispatch(setFormLineData(res.data))
+    const res = await ContentApi.getFormLine()
+    if(formData.length === 0){
+      dispatch(setFormLineData(res.data))
+    }
+
     dispatch(SetFormForYoungSpec(res.data.id)) // дать инфу для линий пока не работает
     console.log(res.data);
   } catch (err) {
